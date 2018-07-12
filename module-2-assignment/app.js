@@ -43,7 +43,7 @@
         quantity:10
       },
       {
-        name:"sode",
+        name:"soda",
         quantity:5
       }
     ];
