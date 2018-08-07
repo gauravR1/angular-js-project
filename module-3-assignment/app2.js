@@ -24,7 +24,7 @@
   function foundItemsDirectiveController(){
     var narrow=this;
     narrow.ifNoItems=function(){
-      if(narrow.foundItems === undefined &&narrow.foundItems.length < 1)
+      if(narrow.foundItems !== undefined && narrow.foundItems.length < 1)
         return true;
       else
         return false;
