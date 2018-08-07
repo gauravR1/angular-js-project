@@ -48,8 +48,8 @@
     };
    narrowdown.removeItem = function(itemIndex) {
             narrowdown.found.splice(itemIndex, 1);
-        }
-  }
+   };
+}
 
 
   MenuSearchService.$inject=['$http'];
