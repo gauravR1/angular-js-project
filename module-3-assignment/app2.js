@@ -37,7 +37,6 @@
     var narrowdown=this;
     narrowdown.searchTerm="";
     narrowdown.searchItems=function(searchTerm){
-      narrowdown.found=[];
       var promise=MenuSearchService.getMatchedMenuItems(searchTerm);
       promise.then(function(items) {
         if (items && items.length > 0) {
@@ -47,17 +46,17 @@
         }
       });
     };
-    narrowdown.removeItem=function(index){
-      MenuSearchService.removeItem(index);
-    };
+   narrowdown.removeItem = function(itemIndex) {
+            narrowdown.found.splice(itemIndex, 1);
+        }
   }
 
 
   MenuSearchService.$inject=['$http'];
   function MenuSearchService($http){
     var service=this;
-    var foundItems=[];
     service.getMatchedMenuItems=function(searchTerm){
+      var foundItems=[];
       return $http({
         method: "GET",
         url:"https://davids-restaurant.herokuapp.com/menu_items.json"
@@ -72,10 +71,6 @@
       return foundItems;
     });
 
-  };
-
-  service.removeItem=function(index){
-    foundItems.splice(index,1);
   };
 }
 
