@@ -37,6 +37,7 @@
     var narrowdown=this;
     narrowdown.searchTerm="";
     narrowdown.searchItems=function(searchTerm){
+      narrowdown.found=[];
       var promise=MenuSearchService.getMatchedMenuItems(searchTerm);
       promise.then(function(items) {
         if (items && items.length > 0) {
@@ -65,6 +66,7 @@
           var item=result.data.menu_items[i]["description"];
           if(searchTerm.length>0 && item.toLowerCase().indexOf(searchTerm) !== -1){
             foundItems.push(result.data.menu_items[i]);
+            console.log(foundItems);
           }
         }
       return foundItems;
