@@ -1,2 +1,3 @@
-Assignment 5
+WEBSITE
+SIGN UP and info functionality using angulrjs
 
